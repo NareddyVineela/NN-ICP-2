@@ -1,0 +1,247 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNXP3Srm134iNrT7PM31OFz",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/NareddyVineela/NN-ICP-2/blob/main/icp%202\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "64VzbwKTG83f"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Task 1"
+      ],
+      "metadata": {
+        "id": "XbRTuBgmHrJ9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def fullname(first_name, last_name):\n",
+        "    full_name = first_name + \" \" + last_name\n",
+        "    return full_name\n",
+        "\n",
+        "def string_alternative(full_name):\n",
+        "    return full_name[::2]\n",
+        "\n",
+        "# Getting input from the user\n",
+        "first_name = input(\"Enter your first name: \")\n",
+        "last_name = input(\"Enter your last name: \")\n",
+        "\n",
+        "# Calling the fullname function to get the full name\n",
+        "name = fullname(first_name, last_name)\n",
+        "\n",
+        "# Printing the full name\n",
+        "print(\"Your full name is:\", name)\n",
+        "\n",
+        "# Getting every other character in the full name\n",
+        "alternating_chars = string_alternative(name)\n",
+        "print(\"Every other character in your full name is:\", alternating_chars)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4DIaq2oZHxKz",
+        "outputId": "e0f7aebc-dd88-4b4c-ae1f-c766cf501136"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your first name: vineela\n",
+            "Enter your last name: nareddy\n",
+            "Your full name is: vineela nareddy\n",
+            "Every other character in your full name is: vneanrdy\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "TASK 2"
+      ],
+      "metadata": {
+        "id": "2zefnJIlMzJ4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "file1 =open('/content/icp2','r')\n",
+        "counts=dict()\n",
+        "data = file1.read()\n",
+        "words = data.split()\n",
+        "for word in words:\n",
+        "  if word in counts:\n",
+        "    counts[word] +=1\n",
+        "  else:\n",
+        "    counts[word] = 1\n",
+        "print(counts)\n",
+        "\n",
+        "f=open('output.txt','w')\n",
+        "f.write(data)\n",
+        "f.write(\"\\nword_count:\\n\")\n",
+        "for key, value in counts.items():\n",
+        "  f.write(f\"{key}:{value}\\n\")\n",
+        "f.close()\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Y_W6FLqAM2lo",
+        "outputId": "9fd24480-ce2f-4ec2-8f0c-1c769239821e"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'Python': 1, 'Course': 2, 'Deep': 1, 'Learning': 1}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "TASK 3"
+      ],
+      "metadata": {
+        "id": "C_Ui5e6oRqb5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Function to convert inches to centimeters\n",
+        "def inches_to_cm(height_inches):\n",
+        "    return height_inches * 2.54\n",
+        "\n",
+        "# Input list of heights in inches\n",
+        "heights_inches = []\n",
+        "num_customers = int(input(\"Enter the number of customers: \"))\n",
+        "\n",
+        "for i in range(num_customers):\n",
+        "    height = float(input(f\"Enter height of customer {i+1} (in inches): \"))\n",
+        "    heights_inches.append(height)\n",
+        "\n",
+        "# Using nested loop to convert heights to centimeters\n",
+        "heights_cm_nested = []\n",
+        "for height in heights_inches:\n",
+        "    height_cm = inches_to_cm(height)\n",
+        "    heights_cm_nested.append(round(height_cm, 2))\n",
+        "\n",
+        "# Print the original heights in inches\n",
+        "print(\"Heights in inches:\", heights_inches)\n",
+        "\n",
+        "# Print the converted heights in centimeters\n",
+        "print(\"Heights in centimeters (using nested loop):\", heights_cm_nested)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O5EQMHmgRsaM",
+        "outputId": "0707fcba-4e42-4cb4-99e6-1d79504de14c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of customers: 4\n",
+            "Enter height of customer 1 (in inches): 120\n",
+            "Enter height of customer 2 (in inches): 130\n",
+            "Enter height of customer 3 (in inches): 140\n",
+            "Enter height of customer 4 (in inches): 150\n",
+            "Heights in inches: [120.0, 130.0, 140.0, 150.0]\n",
+            "Heights in centimeters (using nested loop): [304.8, 330.2, 355.6, 381.0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "heights_inches = []\n",
+        "num_customers = int(input(\"Enter the number of customers: \"))\n",
+        "\n",
+        "for i in range(num_customers):\n",
+        "    height = float(input(f\"Enter height of customer {i+1} (in inches): \"))\n",
+        "    heights_inches.append(height)\n",
+        "\n",
+        "# List comprehension to convert heights to centimeters\n",
+        "heights_cm_comprehension = [round(inches_to_cm(height), 2) for height in heights_inches]\n",
+        "\n",
+        "# Print the original heights in inches\n",
+        "print(\"Heights in inches:\", heights_inches)\n",
+        "\n",
+        "# Print the converted heights in centimeters\n",
+        "print(\"Heights in centimeters (using list comprehension):\", heights_cm_comprehension)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nai6cZhMR-Ln",
+        "outputId": "5d7eff15-fd58-43df-83f8-9219b8e93222"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter the number of customers: 3\n",
+            "Enter height of customer 1 (in inches): 200\n",
+            "Enter height of customer 2 (in inches): 250\n",
+            "Enter height of customer 3 (in inches): 260\n",
+            "Heights in inches: [200.0, 250.0, 260.0]\n",
+            "Heights in centimeters (using list comprehension): [508.0, 635.0, 660.4]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
